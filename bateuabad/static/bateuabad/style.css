@@ -1,0 +1,142 @@
+html {
+    position:relative; 
+    min-height: 100%;
+}
+
+#background {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    background: url(images/bg_large.png) no-repeat;
+    background-size: cover;
+}
+.container h1 {
+    color: white;
+}
+
+
+h1, h2 {
+    font-size: 150%;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 2px;
+}
+
+p, label {
+    font-family: 'Roboto Slab', serif;
+}
+
+a {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 17px;
+    color: darkgrey;
+}
+
+a:hover, a:active {
+    color: white;
+}
+
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+ 
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: 0 none;
+}
+ 
+.btn-primary {
+    background: #382837;
+    color: #ffffff;
+}
+ 
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
+    background: #422F41;
+}
+ 
+.btn-primary:active, .btn-primary.active {
+    background: #422F41;
+    box-shadow: none;
+}
+
+.btn.sharp {
+    border-radius: 0px;
+}
+
+.btn.round {
+    border-radius: 24px;
+}
+
+.btn-primary.raised {
+    box-shadow: 0 3px 0 0 #171116;
+}
+
+.btn-primary.raised:active, .btn-primary.raised.active {
+    background: #422F41;
+    box-shadow: none;
+    margin-bottom: -3px;
+    margin-top: 3px;
+}
+
+/* navbar */
+.navbar-default {
+    background-color: #422F41;
+    border-color: #382837;
+    border-radius: 0px;
+}
+/* title */
+.navbar-default .navbar-brand {
+    color: #777;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+    color: #5E5E5E;
+}
+/* link */
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a, 
+.navbar-default .navbar-nav > .active > a:hover, 
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #555;
+    background-color: #E7E7E7;
+}
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    color: #555;
+    background-color: #D5D5D5;
+}
+
+.list-group-item.active {
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.list-group-item.active:hover {
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.list-group-item.active > .list-group-item-text {
+    color:white;
+}
+
+.list-group-item.active:hover > .list-group-item-text {
+    color:white;
+}

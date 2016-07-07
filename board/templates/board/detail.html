@@ -1,0 +1,42 @@
+{% include "bateuabad/header.html" %}
+{% load staticfiles %}
+
+<img src="{% static 'bateuabad/images/bg_large.png' %}" id="background">
+
+<style>
+</style>
+
+<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+
+		<ul class="list-group">
+    		<li class="list-group-item active">
+				<h4 class="list-group-item-heading" style="font-size:28px">{{ thread.title }}</h4>
+				<p class="list-group-item-text">{{ thread.text }}</p>
+				<h4 class="list-group-item-heading" style="font-size:12px"><br>Postado em {{ thread.pubDate }}</h4>
+			</li>
+
+			{% for comment in thread.comment_set.all %}
+			<li class="list-group-item">
+    			<div class="comment">
+    				<h4 class="list-group-item-heading">{{ comment.author }}</h4>
+					<p class="list-group-item-text">{{ comment.text|linebreaks }}</p>
+					<h4 class="list-group-item-heading" style="font-size:12px">Postado em {{ comment.pubDate }}</h4>
+    			</div>
+    		</li>
+
+			{% empty %}
+			<li class="list-group-item">
+    			<p>Nenhum comentario ainda :(</p>
+    		</li>
+			{% endfor %}
+			{% if error_message %}<li class="list-group-item"><p><strong>{{ error_message }}</strong></p></li>{% endif %}
+		</ul>
+
+		<a class="btn btn-primary raised" href="{% url 'board:addcomment' pk=thread.pk %}">Novo Comentário</a>
+		<a class="btn btn-primary raised" href="{% url 'board:index' %}">Voltar</a>
+
+
+	</div>
+</div>
+{% include "bateuabad/footer.html" %}

@@ -1,0 +1,38 @@
+{% include "bateuabad/header.html" %}
+{% load staticfiles %}
+
+<img src="{% static 'bateuabad/images/bg_large.png' %}" id="background">
+	<div class="row">
+	<div class="col-md-8 col-md-offset-2">
+        <h1 style="color:white;">Forum</h1>
+{% if latest_thread_list %}
+	
+	<div style="color:white;text-align:left" class="list-group">
+    {% for thread in latest_thread_list %}
+    <a href="{% url 'board:detail' thread.id %}" class="list-group-item">
+    	<h4 class="list-group-item-heading">{{ thread.title }}</h4>
+    	{% if thread.text|length > 210 %}
+    		<p class="list-group-item-text">{{ thread.text|slice:':210' }}...</p>
+    	{% else %}
+    		<p class="list-group-item-text">{{ thread.text }}</p>
+    	{% endif %}
+    	<h4 class="list-group-item-heading" style="font-size:12px">
+    		<br><span class="badge">{{ thread.comment_set.all|length }} </span> Respostas. Postado em {{ thread.pubDate }}
+    	</h4>
+ 	</a>
+    {% endfor %}
+    </ul>
+    </div>
+    
+{% else %}
+    <p>No threads are available.</p>
+{% endif %}
+
+<a class="btn btn-primary raised" href="{% url 'board:addthread' %}">Nova Postagem</a>
+<a class="btn btn-primary raised" href="{% url 'index' %}">voltar</a> 
+
+
+</div>
+</div>
+
+{% include "bateuabad/footer.html" %}
