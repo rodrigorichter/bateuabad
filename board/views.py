@@ -18,7 +18,7 @@ class IndexView(generic.ListView):
 		"""
 		return Thread.objects.filter(
 			pubDate__lte=timezone.now()
-		).order_by('-pubDate')
+		).order_by('-latestCommentDate')
 
 
 class DetailView(generic.DetailView):
@@ -51,6 +51,7 @@ def addthread(request):
 		if form.is_valid():
 			thread = form.save(commit=False)
 			thread.pubDate = timezone.now()
+			thread.latestCommentDate = timezone.now()
 			thread.save()
 
 			return redirect('board:detail', pk=thread.pk)
