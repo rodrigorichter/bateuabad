@@ -45,3 +45,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 <div id="content" class="container-fluid">
+
+<div class="row">
+	<div class="col-xs-12 hidden-sm hidden-md hidden-lg"> <!--Mobile Size-->
+        <img class="background" src="{% static 'bateuabad/images/bg_large.png' %}" />   
+    </div>
+	<div class="hidden-xs col-lg-12"> <!--Table and Desktop Size-->
+		<video autoplay loop muted poster="{% static 'bateuabad/images/bg_large.png' %}" id="background">
+			<source src="{% static 'bateuabad/videos/bg_large.webm' %}" type="video/webm">
+		</video>
+	</div>
+</div>

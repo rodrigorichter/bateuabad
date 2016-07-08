@@ -91,3 +91,4 @@ ENV/
 *.pyc
 bateuabad/staticfiles
 bateuabad/secrets_settings.py
+most_used_commands.txt

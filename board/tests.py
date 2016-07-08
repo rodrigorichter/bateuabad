@@ -25,7 +25,7 @@ def create_Thread(text, days):
 	in the past, positive for Threads that have yet to be published).
 	"""
 	time = timezone.now() + datetime.timedelta(days=days)
-	return Thread.objects.create(text=text, pubDate=time)
+	return Thread.objects.create(text=text, pubDate=time, latestCommentDate=time)
 
 def create_Comment(text, days, thread):
 	"""
