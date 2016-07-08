@@ -3,7 +3,7 @@ html {
     min-height: 100%;
 }
 
-#background {
+#background, .background {
     position: fixed;
     top: 40%;
     left: 50%;
@@ -14,7 +14,6 @@ html {
     z-index: -100;
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url(images/bg_large.png) no-repeat;
     background-size: cover;
 }
 .container h1 {
