@@ -18,7 +18,7 @@ class IndexView(generic.ListView):
 		"""
 		return Thread.objects.filter(
 			pubDate__lte=timezone.now()
-		).order_by('-latestCommentDate')
+		).order_by('-latestCommentDate')[:100]
 
 
 class DetailView(generic.DetailView):
